@@ -4,5 +4,6 @@ pandas==2.1.1
 sqlalchemy==2.0.20
 pymysql==1.1.1
 folium==0.14.0
+Comando de instalação das dependências: pip install Flask,pandas , geopandas,sqlalchemy,pymysql,folium -U
 Baixar o banco de dados pelo one drive e adiconar ao diretório do programa
 link do one drive: https://unipead-my.sharepoint.com/:f:/g/personal/sydhiney_silva_aluno_unip_br/IgAGkrBym1GIToCn3WPvqEDAAb2uO0_9WU1yWI7EeanzX-8?e=mONisX
