@@ -1,0 +1,343 @@
+year;area_km;uf
+2025;12;Tocantins
+2025;293;Roraima
+2025;239;Rondônia
+2025;2098;Pará
+2025;1572;Mato Grosso
+2025;227;Maranhão
+2025;14;Amapá
+2025;1016;Amazonas
+2025;325;Acre
+2024;2395;Pará
+2024;468;Roraima
+2024;360;Rondônia
+2024;32;Tocantins
+2024;1257;Mato Grosso
+2024;307;Maranhão
+2024;27;Amapá
+2024;1223;Amazonas
+2024;449;Acre
+2023;32;Tocantins
+2023;284;Roraima
+2023;867;Rondônia
+2023;3299;Pará
+2023;2048;Mato Grosso
+2023;306;Maranhão
+2023;601;Acre
+2023;1610;Amazonas
+2023;17;Amapá
+2022;27;Tocantins
+2022;279;Roraima
+2022;1480;Rondônia
+2022;4162;Pará
+2022;1927;Mato Grosso
+2022;271;Maranhão
+2022;14;Amapá
+2022;2594;Amazonas
+2022;840;Acre
+2021;37;Tocantins
+2021;315;Roraima
+2021;1673;Rondônia
+2021;5238;Pará
+2021;2213;Mato Grosso
+2021;350;Maranhão
+2021;17;Amapá
+2021;2306;Amazonas
+2021;889;Acre
+2020;24;Amapá
+2020;297;Roraima
+2020;1273;Rondônia
+2020;4899;Pará
+2020;1779;Mato Grosso
+2020;336;Maranhão
+2020;25;Tocantins
+2020;1512;Amazonas
+2020;706;Acre
+2019;23;Tocantins
+2019;590;Roraima
+2019;1257;Rondônia
+2019;4172;Pará
+2019;1702;Mato Grosso
+2019;237;Maranhão
+2019;32;Amapá
+2019;1434;Amazonas
+2019;682;Acre
+2018;25;Tocantins
+2018;195;Roraima
+2018;444;Acre
+2018;2744;Pará
+2018;1490;Mato Grosso
+2018;253;Maranhão
+2018;24;Amapá
+2018;1045;Amazonas
+2018;1316;Rondônia
+2017;257;Acre
+2017;132;Roraima
+2017;1243;Rondônia
+2017;2433;Pará
+2017;1561;Mato Grosso
+2017;265;Maranhão
+2017;24;Amapá
+2017;1001;Amazonas
+2017;31;Tocantins
+2016;58;Tocantins
+2016;202;Roraima
+2016;1376;Rondônia
+2016;2992;Pará
+2016;1489;Mato Grosso
+2016;258;Maranhão
+2016;17;Amapá
+2016;1129;Amazonas
+2016;372;Acre
+2015;57;Tocantins
+2015;156;Roraima
+2015;1030;Rondônia
+2015;2153;Pará
+2015;1601;Mato Grosso
+2015;209;Maranhão
+2015;25;Amapá
+2015;712;Amazonas
+2015;264;Acre
+2014;50;Tocantins
+2014;219;Roraima
+2014;684;Rondônia
+2014;1887;Pará
+2014;1075;Mato Grosso
+2014;257;Maranhão
+2014;31;Amapá
+2014;500;Amazonas
+2014;309;Acre
+2013;23;Amapá
+2013;170;Roraima
+2013;932;Rondônia
+2013;2346;Pará
+2013;1139;Mato Grosso
+2013;403;Maranhão
+2013;74;Tocantins
+2013;583;Amazonas
+2013;221;Acre
+2012;757;Mato Grosso
+2012;124;Roraima
+2012;773;Rondônia
+2012;1741;Pará
+2012;52;Tocantins
+2012;269;Maranhão
+2012;27;Amapá
+2012;523;Amazonas
+2012;305;Acre
+2011;40;Tocantins
+2011;141;Roraima
+2011;865;Rondônia
+2011;3008;Pará
+2011;1120;Mato Grosso
+2011;280;Acre
+2011;66;Amapá
+2011;502;Amazonas
+2011;396;Maranhão
+2010;49;Tocantins
+2010;256;Roraima
+2010;435;Rondônia
+2010;3770;Pará
+2010;871;Mato Grosso
+2010;712;Maranhão
+2010;53;Amapá
+2010;595;Amazonas
+2010;259;Acre
+2009;405;Amazonas
+2009;121;Roraima
+2009;482;Rondônia
+2009;4281;Pará
+2009;1049;Mato Grosso
+2009;828;Maranhão
+2009;70;Amapá
+2009;61;Tocantins
+2009;167;Acre
+2008;107;Tocantins
+2008;574;Roraima
+2008;1136;Rondônia
+2008;5607;Pará
+2008;3258;Mato Grosso
+2008;1271;Maranhão
+2008;100;Amapá
+2008;604;Amazonas
+2008;254;Acre
+2007;309;Roraima
+2007;63;Tocantins
+2007;1611;Rondônia
+2007;5526;Pará
+2007;2678;Mato Grosso
+2007;631;Maranhão
+2007;39;Amapá
+2007;610;Amazonas
+2007;184;Acre
+2006;124;Tocantins
+2006;231;Roraima
+2006;2049;Rondônia
+2006;5659;Pará
+2006;4333;Mato Grosso
+2006;674;Maranhão
+2006;30;Amapá
+2006;788;Amazonas
+2006;398;Acre
+2005;271;Tocantins
+2005;133;Roraima
+2005;3244;Rondônia
+2005;5899;Pará
+2005;7145;Mato Grosso
+2005;922;Maranhão
+2005;33;Amapá
+2005;775;Amazonas
+2005;592;Acre
+2004;158;Tocantins
+2004;311;Roraima
+2004;728;Acre
+2004;8870;Pará
+2004;11814;Mato Grosso
+2004;755;Maranhão
+2004;46;Amapá
+2004;1232;Amazonas
+2004;3858;Rondônia
+2003;156;Tocantins
+2003;439;Roraima
+2003;3597;Rondônia
+2003;7145;Pará
+2003;10405;Mato Grosso
+2003;993;Maranhão
+2003;25;Amapá
+2003;1558;Amazonas
+2003;1078;Acre
+2002;7510;Pará
+2002;84;Roraima
+2002;3099;Rondônia
+2002;212;Tocantins
+2002;7892;Mato Grosso
+2002;1085;Maranhão
+2002;0;Amapá
+2002;885;Amazonas
+2002;883;Acre
+2001;189;Tocantins
+2001;345;Roraima
+2001;2673;Rondônia
+2001;5237;Pará
+2001;419;Acre
+2001;958;Maranhão
+2001;7;Amapá
+2001;634;Amazonas
+2001;7703;Mato Grosso
+2000;244;Tocantins
+2000;253;Roraima
+2000;2465;Rondônia
+2000;547;Acre
+2000;6369;Mato Grosso
+2000;1065;Maranhão
+2000;0;Amapá
+2000;612;Amazonas
+2000;6671;Pará
+1999;216;Tocantins
+1999;220;Roraima
+1999;2358;Rondônia
+1999;5111;Pará
+1999;6963;Mato Grosso
+1999;1230;Maranhão
+1999;0;Amapá
+1999;720;Amazonas
+1999;441;Acre
+1998;5829;Pará
+1998;223;Roraima
+1998;2041;Rondônia
+1998;576;Tocantins
+1998;6466;Mato Grosso
+1998;1012;Maranhão
+1998;30;Amapá
+1998;670;Amazonas
+1998;536;Acre
+1997;273;Tocantins
+1997;184;Roraima
+1997;1986;Rondônia
+1997;4139;Pará
+1997;5271;Mato Grosso
+1997;409;Maranhão
+1997;358;Acre
+1997;589;Amazonas
+1997;18;Amapá
+1996;320;Tocantins
+1996;214;Roraima
+1996;2432;Rondônia
+1996;6135;Pará
+1996;6543;Mato Grosso
+1996;1061;Maranhão
+1996;0;Amapá
+1996;1023;Amazonas
+1996;433;Acre
+1995;797;Tocantins
+1995;220;Roraima
+1995;4730;Rondônia
+1995;7845;Pará
+1995;10391;Mato Grosso
+1995;1745;Maranhão
+1995;9;Amapá
+1995;2114;Amazonas
+1995;1208;Acre
+1994;0;Amapá
+1994;240;Roraima
+1994;2595;Rondônia
+1994;4284;Pará
+1994;6220;Mato Grosso
+1994;372;Maranhão
+1994;333;Tocantins
+1994;370;Amazonas
+1994;482;Acre
+1993;333;Tocantins
+1993;240;Roraima
+1993;2595;Rondônia
+1993;4284;Pará
+1993;6220;Mato Grosso
+1993;372;Maranhão
+1993;0;Amapá
+1993;370;Amazonas
+1993;482;Acre
+1992;409;Tocantins
+1992;281;Roraima
+1992;400;Acre
+1992;3787;Pará
+1992;4674;Mato Grosso
+1992;1135;Maranhão
+1992;36;Amapá
+1992;799;Amazonas
+1992;2265;Rondônia
+1991;380;Acre
+1991;420;Roraima
+1991;1110;Rondônia
+1991;3780;Pará
+1991;2840;Mato Grosso
+1991;670;Maranhão
+1991;410;Amapá
+1991;980;Amazonas
+1991;440;Tocantins
+1990;580;Tocantins
+1990;150;Roraima
+1990;1670;Rondônia
+1990;4890;Pará
+1990;4020;Mato Grosso
+1990;1100;Maranhão
+1990;250;Amapá
+1990;520;Amazonas
+1990;550;Acre
+1989;730;Tocantins
+1989;630;Roraima
+1989;1430;Rondônia
+1989;5750;Pará
+1989;5960;Mato Grosso
+1989;1420;Maranhão
+1989;130;Amapá
+1989;1180;Amazonas
+1989;540;Acre
+1988;1650;Tocantins
+1988;290;Roraima
+1988;2340;Rondônia
+1988;6990;Pará
+1988;5140;Mato Grosso
+1988;2450;Maranhão
+1988;60;Amapá
+1988;1510;Amazonas
+1988;620;Acre
