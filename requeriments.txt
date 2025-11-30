@@ -1,0 +1,6 @@
+Flask==2.3.5
+geopandas==1.2.1
+pandas==2.1.1
+sqlalchemy==2.0.20
+pymysql==1.1.1
+folium==0.14.0

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados - Desmatamento</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .toggle-btn { cursor: pointer; }
+    iframe { border: none; }
+  </style>
+</head>
+<body class="bg-light">
+
+<div class="container my-4">
+  <h1 class="mb-4 text-success text-center">🌱 Resultados do Desmatamento</h1>
+
+  <div class="mb-3 text-center">
+    <p><strong>Anos selecionados:</strong> {{ anos|join(', ') }}</p>
+    <p><strong>Estados selecionados:</strong> {{ estados|join(', ') }}</p>
+
+  </div>
+
+  <div class="text-center mb-3">
+    <button id="toggleTableBtn" class="btn btn-outline-success">Ocultar Tabela</button>
+  </div>
+
+  <div id="tabelaContainer" class="table-responsive mb-4">
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Ano</th>
+          <th>Estado</th>
+          <th>Área Desmatada (km²)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if dados %}
+          {% for d in dados %}
+          <tr>
+            <td>{{ d.year }}</td>
+            <td>{{ d.state }}</td>
+            <td>{{ d.total_area_km | round(2) }}</td>
+          </tr>
+          {% endfor %}
+        {% else %}
+          <tr>
+            <td colspan="3" class="text-center">Nenhum dado encontrado.</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <canvas id="grafico" class="mb-5"></canvas>
+
+  {% if mapa_html %}
+  <div class="my-4 text-center">
+    <h3 class="text-success">🗺️ Mapa do Desmatamento</h3>
+    <iframe src="{{ url_for('static', filename=mapa_html) }}" width="100%" height="600px"></iframe>
+  </div>
+  {% endif %}
+
+  <div class="text-center mb-4">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Voltar</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const graficoAnos = {{ grafico_anos | tojson }};
+  const graficoValores = {{ grafico_valores | tojson }};
+
+  document.getElementById("toggleTableBtn").addEventListener("click", function() {
+    const tabela = document.getElementById("tabelaContainer");
+    if (tabela.style.display === "none") {
+      tabela.style.display = "block";
+      this.textContent = "Ocultar Tabela";
+    } else {
+      tabela.style.display = "none";
+      this.textContent = "Mostrar Tabela";
+    }
+  });
+
+  const ctx = document.getElementById('grafico').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: graficoAnos,
+      datasets: [{
+        label: 'Área Desmatada (km²)',
+        data: graficoValores,
+        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

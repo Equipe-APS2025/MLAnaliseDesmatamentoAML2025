@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão de Desmatamento por Estado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+
+    <h2 class="text-center mb-4">🌳 Previsão de Desmatamento por Estado</h2>
+
+    <form method="POST" class="text-center mb-4">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <select class="form-select" name="estado" required>
+                    <option value="">Selecione um estado</option>
+                    {% for e in estados %}
+                        <option value="{{ e }}" {% if estado_sel == e %}selected{% endif %}>{{ e }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-success" type="submit">Gerar Previsão</button>
+            </div>
+        </div>
+    </form>
+
+    {% if previsoes %}
+    <div class="d-flex align-items-center mb-3">
+    <label for="tipoGrafico" class="me-2">Tipo de gráfico:</label>
+    <select id="tipoGrafico" class="form-select w-auto">
+        <option value="bar" selected>Barras</option>
+        <option value="line">Linha</option>
+    </select>
+</div>
+
+<canvas id="graficoEstado" width="400" height="200"></canvas>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="card-title text-center">{{ estado_sel }}</h5>
+            <canvas id="graficoEstado" height="100"></canvas>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">📊 Tabela de Previsões</h5>
+            <!-- <table class="table table-striped mt-3">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Ano</th>
+                        <th>Área Prevista (km²)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in previsoes %}
+                    <tr>
+                        <td>{{ p.year }}</td>
+                        <td>{{ "%.2f"|format(p.previsto_km2) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table> -->
+            <table class="table table-striped mt-3">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Ano</th>
+                        <th>Área (km²)</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for h in historico %}
+                    <tr>
+                        <td>{{ h.year }}</td>
+                        <td>{{ "%.2f"|format(h.total_area_km) }}</td>
+                        <td>Histórico</td>
+                    </tr>
+                    {% endfor %}
+                    {% for p in previsoes %}
+                    <tr>
+                        <td>{{ p.year }}</td>
+                        <td>{{ "%.2f"|format(p.previsto_km2) }}</td>
+                        <td>Previsão</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-secondary">⬅ Voltar</a>
+    </div>
+
+</div>
+<script>
+    {% if previsoes %}
+    const historico_anos = {{ historico | map(attribute='year') | list | tojson }};
+    const historico_valores = {{ historico | map(attribute='total_area_km') | list | tojson }};
+    const previsao_anos = {{ previsoes | map(attribute='year') | list | tojson }};
+    const previsao_valores = {{ previsoes | map(attribute='previsto_km2') | list | tojson }};
+
+    const todos_anos = historico_anos.concat(previsao_anos);
+    const todos_valores = historico_valores.concat(previsao_valores);
+
+    const backgroundColors = historico_anos.map(a => 'rgba(0, 123, 255, 0.8)')
+                            .concat(previsao_anos.map(a => 'rgba(220, 53, 69, 0.6)'));
+
+    let ctx = document.getElementById('graficoEstado').getContext('2d');
+
+    let chartConfig = {
+        type: 'bar', // inicial: barras
+        data: {
+            labels: todos_anos,
+            datasets: [{
+                label: 'Área desmatada (km²)',
+                data: todos_valores,
+                backgroundColor: backgroundColors,
+                borderColor: backgroundColors,
+                borderWidth: 1,
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                y: { beginAtZero: true, title: { display: true, text: 'Área (km²)' } },
+                x: { title: { display: true, text: 'Ano' } }
+            }
+        }
+    };
+
+    let grafico = new Chart(ctx, chartConfig);
+
+    // 🌀 Troca de tipo de gráfico
+    document.getElementById('tipoGrafico').addEventListener('change', function() {
+        grafico.config.type = this.value;
+        grafico.update();
+    });
+
+    {% endif %}
+</script>
+
+<!-- <script>
+    {% if previsoes %}
+    const historico_anos = {{ historico | map(attribute='year') | list | tojson }};
+    const historico_valores = {{ historico | map(attribute='total_area_km') | list | tojson }};
+    const previsao_anos = {{ previsoes | map(attribute='year') | list | tojson }};
+    const previsao_valores = {{ previsoes | map(attribute='previsto_km2') | list | tojson }};
+
+    const ctx = document.getElementById('graficoEstado').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: historico_anos.concat(previsao_anos),
+            datasets: [
+                {
+                    label: 'Histórico (km²)',
+                    data: historico_valores.concat(Array(previsao_anos.length).fill(null)),
+                    borderColor: 'rgba(0, 123, 255, 0.9)',
+                    fill: false,
+                    tension: 0.3
+                },
+                {
+                    label: 'Previsão (km²)',
+                    data: Array(historico_anos.length).fill(null).concat(previsao_valores),
+                    borderColor: 'rgba(220, 53, 69, 0.9)',
+                    borderDash: [5, 5],
+                    fill: false,
+                    tension: 0.3
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: { beginAtZero: true, title: { display: true, text: 'Área (km²)' } },
+                x: { title: { display: true, text: 'Ano' } }
+            }
+        }
+    });
+    {% endif %}
+</script> -->
+
+</body>
+</html>
